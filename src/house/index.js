@@ -1,8 +1,14 @@
 import './house.css';
-import React from 'react';
+import React, { useState } from 'react';
 import emailIcon from './Email.png';
+import Inquiry from './inquiry';
 
 const House = ({ house }) => {
+  const [inquiryClicked, setInquiryClicked] = useState(false);
+  const inquiryClick = () => {
+    setInquiryClicked(!inquiryClicked);
+  };
+
   return (
     <div>
     <div className="row mt-2">
@@ -22,7 +28,9 @@ const House = ({ house }) => {
           src={emailIcon}
           height="50"
           alt="inquiry"
+          onClick={inquiryClick}
         />
+        {inquiryClicked && <Inquiry house={ house }  />}
       </div>
     </div>
   </div>
