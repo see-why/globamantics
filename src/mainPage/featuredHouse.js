@@ -1,5 +1,6 @@
 import House from '../house'
 import React from 'react';
+import PropTypes from 'prop-types'
 
 const FeaturedHouse = ({ house }) => {
     if(house){
@@ -13,6 +14,10 @@ const FeaturedHouse = ({ house }) => {
       );
     }
     return <div>No featured house at this time.</div>
+}
+
+FeaturedHouse.propTypes = {
+  house: PropTypes.object.isRequired
 }
  
 export default FeaturedHouse;

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./searchResults.css";
 import React from "react";
+import PropTypes from 'prop-types'
 
 const SearchResultsRow = ({ house }) => {
   const history = useNavigate();
@@ -17,5 +18,9 @@ const SearchResultsRow = ({ house }) => {
     </tr>
   );
 };
+
+SearchResultsRow.propTypes = {
+  house: PropTypes.object.isRequired
+}
 
 export default SearchResultsRow;

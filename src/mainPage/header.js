@@ -1,5 +1,6 @@
 import logo from './GloboLogo.png'
 import React from 'react';
+import PropTypes from 'prop-types'
 
 const Header = ({ subtitle }) => {
   return (
@@ -12,6 +13,10 @@ const Header = ({ subtitle }) => {
       </div>
     </header>
   );
+}
+
+Header.propTypes = {
+  subtitle: PropTypes.string.isRequired
 }
 
 export default Header;
