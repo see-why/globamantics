@@ -1,8 +1,10 @@
 import React from 'react';
-import uuid from 'uuid';
-import { useHistory } from 'react-router-dom'
+import { v1 as uuid } from 'uuid';
+import { useNavigate } from 'react-router-dom'
 
 const HouseFilter = ({ allHouses }) => {
+  const history = useNavigate()
+
   const countries = allHouses
     ? Array.from(new Set(allHouses.map((h) => h.country)))
     : [];
@@ -10,7 +12,7 @@ const HouseFilter = ({ allHouses }) => {
 
   const onSelectChange = (e) => {
     const country = e.target.value;
-    history.push(`/searchresults/${country}`);
+    history(`/searchresults/${country}`);
   }
 
   return (
