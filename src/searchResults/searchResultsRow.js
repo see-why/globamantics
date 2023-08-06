@@ -1,8 +1,9 @@
-import { useHistory } from "react-router-dom";
-import "./search-results.css";
+import { useNavigate } from "react-router-dom";
+import "./searchResults.css";
+import React from "react";
 
 const SearchResultsRow = ({ house }) => {
-  const history = useHistory();
+  const history = useNavigate();
 
   const setActive = () => {
     history.push(`/house/${house.id}`);
