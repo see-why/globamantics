@@ -1,9 +1,11 @@
-import React from 'react';
-import { v1 as uuid } from 'uuid';
+import React, { useContext } from 'react';
+import HousesContext from '../context/houseContext';
+import uuid from 'react-uuid';
 import { useNavigate } from 'react-router-dom'
 
-const HouseFilter = ({ allHouses }) => {
+const HouseFilter = () => {
   const history = useNavigate()
+  const allHouses = useContext(HousesContext)
 
   const countries = allHouses
     ? Array.from(new Set(allHouses.map((h) => h.country)))
@@ -23,7 +25,7 @@ const HouseFilter = ({ allHouses }) => {
       <div className="col-md-4 mb-3">
         <select className="form-select" onChange={onSelectChange}>
           {countries.map((c) => (
-            <option key={ uuid } value={c}>
+            <option key={ uuid() } value={c}>
               {c}
             </option>
           ))}

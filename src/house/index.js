@@ -2,6 +2,7 @@ import './house.css';
 import React, { useState } from 'react';
 import emailIcon from './Email.png';
 import Inquiry from './inquiry';
+import PropTypes from 'prop-types'
 
 const House = ({ house }) => {
   const [inquiryClicked, setInquiryClicked] = useState(false);
@@ -36,5 +37,9 @@ const House = ({ house }) => {
   </div>
   );
 }
+
+House.propTypes = {
+  house: PropTypes.object.isRequired
+};
 
 export default House;
